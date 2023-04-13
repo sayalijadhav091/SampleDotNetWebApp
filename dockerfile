@@ -1,7 +1,7 @@
- FROM mcr.microsoft.com/dotnet/core/aspnet:5.0-buster-slim AS base
+ FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019-buster-slim AS base
  WORKDIR /app
  EXPOSE 80
- FROM mcr.microsoft.com/dotnet/core/sdk:5.0-buster AS build
+ FROM mcr.microsoft.com/dotnet/core/sdk:4.8-buster AS build
  WORKDIR /src
  COPY ["SampleDotNetWebapp.csproj", ""]
  RUN dotnet restore "./SampleDotNetWebapp.csproj"
